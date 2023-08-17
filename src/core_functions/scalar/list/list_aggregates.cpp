@@ -235,6 +235,7 @@ static void ListAggregatesFunction(DataChunk &args, ExpressionState &state, Vect
 			continue;
 		}
 
+		// Update with values from within the list
 		for (idx_t child_idx = 0; child_idx < list_entry.length; child_idx++) {
 			// states vector is full, update
 			if (states_idx == STANDARD_VECTOR_SIZE) {

@@ -39,6 +39,11 @@ struct ArrayAggregateFun {
 	static constexpr const char *Name = "array_aggregate";
 };
 
+/**
+    Notes:
+    It changes the bind of a fn call of the form `list_aggr(l, <fn_name>, ..args)`
+    to `<fn_name>(LIST, ..args)` internally
+*/
 struct ListAggrFun {
 	using ALIAS = ListAggregateFun;
 
@@ -217,6 +222,16 @@ struct ListRangeFun {
 	static constexpr const char *Example = "range(2, 5, 3)";
 
 	static ScalarFunctionSet GetFunctions();
+};
+
+struct ListDistanceFun {
+	static constexpr const char *Name = "list_distance";
+	static constexpr const char *Parameters = "l,search_l,algorithm";
+	static constexpr const char *Description =
+	    "Calculate vector distance of two lists(mathematical vectors) using the specified algorithm";
+	static constexpr const char *Example = "list_distance(l1, l2, 'euclidean')";
+
+	static ScalarFunction GetFunction();
 };
 
 } // namespace duckdb

@@ -228,4 +228,21 @@ struct SumNoOverflowFun {
 	static AggregateFunctionSet GetFunctions();
 };
 
+struct L2NormFun {
+	static constexpr const char *Name = "l2norm";
+	static constexpr const char *Parameters = "arg";
+	static constexpr const char *Description = "Calculates the L2 Norm of all tuples in arg.";
+	static constexpr const char *Example = "l2norm(A)";
+
+	static AggregateFunction GetFunction();
+};
+
+struct L2DistanceFun {
+	static constexpr const char *Name = "l2distance";
+	static constexpr const char *Parameters = "arg1,arg2";
+	static constexpr const char *Description = "Calculates the L2 Distance";
+	static constexpr const char *Example = "l2distance(A,B)";
+
+	static AggregateFunction GetFunction();
+};
 } // namespace duckdb

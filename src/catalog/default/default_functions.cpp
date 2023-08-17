@@ -133,6 +133,8 @@ static DefaultMacro internal_macros[] = {
 	{DEFAULT_SCHEMA, "list_first", {"l", nullptr}, "list_aggr(l, 'first')"},
 	{DEFAULT_SCHEMA, "list_any_value", {"l", nullptr}, "list_aggr(l, 'any_value')"},
 	{DEFAULT_SCHEMA, "list_kurtosis", {"l", nullptr}, "list_aggr(l, 'kurtosis')"},
+	{DEFAULT_SCHEMA, "list_l2norm", {"l", nullptr}, "list_aggr(l, 'l2norm')"},
+	{DEFAULT_SCHEMA, "euclidean_distance", {"l1", "l2", nullptr}, "list_distance(l1, l2, 'l2distance')"},
 	{DEFAULT_SCHEMA, "list_min", {"l", nullptr}, "list_aggr(l, 'min')"},
 	{DEFAULT_SCHEMA, "list_max", {"l", nullptr}, "list_aggr(l, 'max')"},
 	{DEFAULT_SCHEMA, "list_product", {"l", nullptr}, "list_aggr(l, 'product')"},

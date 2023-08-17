@@ -36,8 +36,7 @@ SELECT list_apply(range(5), x -> {x:x, w:list_filter(range(5), y -> abs(y-x) < 2
 [{'x': 0, 'w': [0, 1]}, {'x': 1, 'w': [0, 1, 2]}, {'x': 2, 'w': [1, 2, 3]}, {'x': 3, 'w': [2, 3, 4]}, {'x': 4, 'w': [3, 4]}]
 
 query I
-SELECT list_apply(range(8), x -> list_aggr(list_apply(range(8),
-y -> list_element('▁▂▃▄▅▆▇█', 1+abs(y-x))), 'string_agg', ''));
+SELECT list_apply(range(8), x -> list_aggr(list_apply(range(8), y -> list_element('▁▂▃▄▅▆▇█', 1+abs(y-x))), 'string_agg', ''));
 ----
 [▁▂▃▄▅▆▇█, ▂▁▂▃▄▅▆▇, ▃▂▁▂▃▄▅▆, ▄▃▂▁▂▃▄▅, ▅▄▃▂▁▂▃▄, ▆▅▄▃▂▁▂▃, ▇▆▅▄▃▂▁▂, █▇▆▅▄▃▂▁]
 

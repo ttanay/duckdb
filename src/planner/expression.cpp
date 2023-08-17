@@ -29,6 +29,8 @@ bool Expression::IsWindow() const {
 	return is_window;
 }
 
+// If I understand this correctly, it goes thrugh the entire EnumerateChildren
+// calls to then return is_scalar even though it may be unset in the first call.
 bool Expression::IsScalar() const {
 	bool is_scalar = true;
 	ExpressionIterator::EnumerateChildren(*this, [&](const Expression &child) {

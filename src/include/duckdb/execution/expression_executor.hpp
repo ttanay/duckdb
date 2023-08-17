@@ -25,6 +25,7 @@ class ExpressionExecutor {
 
 public:
 	DUCKDB_API explicit ExpressionExecutor(ClientContext &context);
+	// Why does this not use smart pointers?
 	DUCKDB_API ExpressionExecutor(ClientContext &context, const Expression *expression);
 	DUCKDB_API ExpressionExecutor(ClientContext &context, const Expression &expression);
 	DUCKDB_API ExpressionExecutor(ClientContext &context, const vector<unique_ptr<Expression>> &expressions);

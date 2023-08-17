@@ -108,6 +108,20 @@
         "type": "aggregate_function"
     },
     {
+        "name": "l2norm",
+        "parameters": "arg",
+        "description": "Calculates the L2 Norm of all tuples in arg.",
+        "example": "l2norm(A)",
+        "type": "aggregate_function"
+    },
+    {
+        "name": "l2distance",
+        "parameters": "arg1,arg2",
+        "description": "Calculates the L2 Distance",
+        "example": "l2distance(A,B)",
+        "type": "aggregate_function"
+    },
+    {
         "name": "skewness",
         "parameters": "x",
         "description": "Returns the skewness of all input values.",

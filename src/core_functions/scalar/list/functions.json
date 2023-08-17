@@ -16,6 +16,13 @@
         "aliases": ["array_aggregate", "list_aggr", "array_aggr", "aggregate"]
     },
     {
+        "name": "list_distance",
+        "parameters": "l,search_l,algorithm",
+        "description": "Computes vector distance between elements of l w.r.t search_l using specified algorithm",
+        "example": "list_distnce([0.7, 0.99], [0.2, 0.3], 'l2distance')",
+        "type": "scalar_function"
+    },
+    {
         "name": "list_distinct",
         "parameters": "list",
         "description": "Removes all duplicates and NULLs from a list. Does not preserve the original order.",
